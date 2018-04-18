@@ -21,8 +21,7 @@ class SetImpl<T extends Comparable<T>> implements Set<T> {
 	}
 	@Override
 	public Iterator<T> iterator() {
-		// Iterator implementieren...
-		throw new UnsupportedOperationException();
+		return new MyIterator();
 	}
 
 	/**
