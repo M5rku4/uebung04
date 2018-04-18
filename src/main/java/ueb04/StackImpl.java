@@ -9,10 +9,20 @@ class StackImpl<T> implements Stack<T> {
 	 * in umgekehrter Reihenfolge zurück gibt. Also als erstes das letzte (also "unterste"),
 	 * Element, dann das zweit-unterste etc.
 	 */
+	class MyIterator implements Iterator<T>{
+		@Override
+		public boolean hasNext() {
+			return false;
+		}
+
+		@Override
+		public T next() {
+			return null;
+		}
+	}
 	@Override
 	public Iterator<T> iterator() {
-		// Iterator implementieren...
-		throw new UnsupportedOperationException();
+		return new MyIterator();
 	}
 
 	private class Element {
