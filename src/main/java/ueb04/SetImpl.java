@@ -8,6 +8,17 @@ class SetImpl<T extends Comparable<T>> implements Set<T> {
 	/**
 	 * Gibt einen Iterator zurück, welcher alle Elemente des Sets besucht.
 	 */
+	class MyIterator implements Iterator<T>{
+		@Override
+		public boolean hasNext() {
+			return false;
+		}
+
+		@Override
+		public T next() {
+			return null;
+		}
+	}
 	@Override
 	public Iterator<T> iterator() {
 		// Iterator implementieren...
