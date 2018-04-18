@@ -9,16 +9,21 @@ class SetImpl<T extends Comparable<T>> implements Set<T> {
 	 * Gibt einen Iterator zurück, welcher alle Elemente des Sets besucht.
 	 */
 	class MyIterator implements Iterator<T>{
-		StackImpl<Element> agenda = new StackImpl<>();
-		agenda.
+		Stack<Element> agenda = new StackImpl<>();
+		{
+			if(root != null)
+				agenda.push(root);
+		}
 		@Override
 		public boolean hasNext() {
-			return false;
+			return agenda.size() > 0;
 		}
 
 		@Override
 		public T next() {
-			return null;
+			if(root != null)
+				Element e = root;
+
 		}
 	}
 	@Override
