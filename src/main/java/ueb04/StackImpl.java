@@ -10,14 +10,26 @@ class StackImpl<T> implements Stack<T> {
 	 * Element, dann das zweit-unterste etc.
 	 */
 	class MyIterator implements Iterator<T>{
+		Stack<Element> agenda = new StackImpl<>();
+
+		public MyIterator() {
+			if(top != null)
+				agenda.push(top);
+			Element e = top;
+			while(e.next != null) {
+				agenda.push(e.next);
+				e = e.next;
+			}
+		}
+
 		@Override
 		public boolean hasNext() {
-			return false;
+			return agenda.size() > 0;
 		}
 
 		@Override
 		public T next() {
-			return null;
+			return agenda.pop().value;
 		}
 	}
 	@Override
